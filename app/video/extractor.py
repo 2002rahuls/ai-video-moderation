@@ -1,7 +1,9 @@
 import os
+import shutil
 import ffmpeg
 from typing import List
 from app.config import FRAME_INTERVAL, MAX_FRAMES
+
 
 def extract_frames(video_path: str, output_dir: str, frame_rate: float) -> list[str]:
     """
@@ -9,6 +11,13 @@ def extract_frames(video_path: str, output_dir: str, frame_rate: float) -> list[
     """
     #print(f"⏳ Starting frame extraction for {os.path.basename(video_path)}...")
     
+    # Ensure ffmpeg binary is available on PATH before attempting extraction.
+    if shutil.which("ffmpeg") is None:
+        raise RuntimeError(
+            "ffmpeg executable not found. Install ffmpeg and ensure the 'ffmpeg' binary is on your PATH. "
+            "On Windows you can install via Chocolatey (`choco install ffmpeg`) or download a static build from https://ffmpeg.org/download.html."
+        )
+
     output_pattern = os.path.join(output_dir, "frame-%04d.jpg")
     
     try:
