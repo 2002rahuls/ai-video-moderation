@@ -1,0 +1,18 @@
+# Core async + HTTP
+aiohttp>=3.9.0
+
+# OpenAI (Async client)
+openai>=1.30.0
+
+# Video processing
+ffmpeg-python>=0.2.0
+
+# Data validation (Schema)
+pydantic>=2.6.0
+
+# Firebase / Firestore
+firebase-admin>=6.4.0
+google-cloud-firestore>=2.15.0
+
+requests>=2.31.0
+python-dotenv>=1.0.1
