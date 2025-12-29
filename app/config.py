@@ -1,5 +1,7 @@
+from dotenv import load_dotenv
+load_dotenv()   # loads .env into environment
 import os
-
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # --- OpenAI ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
