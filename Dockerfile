@@ -7,4 +7,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "scripts/run_batch.py"]
+CMD ["python", "scripts/run_single.py"]
