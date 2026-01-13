@@ -245,6 +245,30 @@ The same architecture can be extended to:
 
 ---
 
+## Run on Any System (Docker CLI)
+
+This project can be executed on any machine using Docker by running the image locally after building it on your system.
+The Docker image is not published to any public registry and exists only on the local machine.
+
+🔒 API Key & Security Notice
+The API key used by this project is personal, confidential, and intentionally not disclosed.
+It is not included in the Docker command, source code, or repository.
+The application expects the key to be provided via a local .env file, which should remain private and must not be committed to version control.
+
+```
+docker run --rm \
+  -v $(pwd)/videos:/videos \
+  --env-file .env \
+  ai-video-moderation \
+  --video /videos/sample.mp4
+
+```
+
+Notes:
+
+- The .env file is expected to exist locally and contain all required environment variables.
+- Since the image is local-only, ensure it has been built successfully before running the above command.
+
 ## Author
 
 **Rahul Shah**
